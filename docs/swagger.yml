@@ -12,7 +12,7 @@ tags:
     description: "Email Services Apicreate"
 
 paths:
-  /send:
+  /email/send:
     post:
       tags:
         - "Email"
