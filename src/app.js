@@ -3,17 +3,19 @@ const app = express();
 const swaggerUI = require("swagger-ui-express");
 const YAML = require("yamljs");
 const swaggerDocument = YAML.load('./docs/swagger.yml');
-const cors =  require('./middlewares/cors')
+const cors = require('cors');
 
 app.use(express.json());
 app.use(express.urlencoded({
     extended: true
 }));
 
-const emailRoutes = require("./routes/email");
+app.use(cors())
 
-app.use('/api-docs', cors,swaggerUI.serve, swaggerUI.setup(swaggerDocument));
-app.use('/email', cors ,emailRoutes);
+const emailRoutes = require('./routes/email');
+
+app.use('/api-docs',swaggerUI.serve, swaggerUI.setup(swaggerDocument));
+app.use('/email',emailRoutes);
 
 
 module.exports = app;
