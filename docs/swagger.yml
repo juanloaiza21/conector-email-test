@@ -1,0 +1,94 @@
+openapi: '3.0.2'
+info:
+  title: Tecnical Micro Services Email
+  version: '1.0'
+servers:
+  - url: http://localhost:3003
+    description : Services Local 
+  - url: https://api.server.test/v1
+    description : Services Google Cloud
+tags:
+  - name: "Email"
+    description: "Email Services Apicreate"
+
+paths:
+  /send:
+    post:
+      tags:
+        - "Email"
+      summary: "Email"
+      description: "send Email Apicreate"
+      operationId: "sendEmail"
+      requestBody:
+        description: data 
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Email"
+      responses:
+        "200":
+          description: show data
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Success"
+        "400":
+          description: errors
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Errors"
+
+components:
+  schemas:
+
+    Email:
+      type: object
+      properties: 
+        to:
+          type: string
+          example : 
+            apicreatecol@gmail.com
+        subject: 
+            type: string
+            example: "Comiagro Notifications"
+        html:
+            type: string
+            example : <h1>hola bebe2</h1>
+
+    Errors:
+      type: object
+      properties:
+        info:
+          type: object
+          properties:
+            urlServices:
+              type: string
+              example: url
+            path:
+              type: string
+              example: /route/endpoint
+            status:
+              type: integer
+              example: 40*
+        errors:
+          type: object
+
+    Success:
+      type: object
+      properties:
+        info:
+          type: object
+          properties:
+            urlServices:
+              type: string
+              example: url
+            path:
+              type: string
+              example: /route/endpoint
+            status:
+              type: integer
+              example: 20*
+        result:
+          type: object
