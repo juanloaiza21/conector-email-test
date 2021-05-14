@@ -20,7 +20,7 @@ app.use(cors(corsOptions));
 const emailRoutes = require("./routes/email");
 
 app.use('/api-docs', swaggerUI.serve, swaggerUI.setup(swaggerDocument));
-app.use('/email', emailRoutes);
+app.use('/', emailRoutes);
 
 
 module.exports = app;
