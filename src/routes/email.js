@@ -3,9 +3,7 @@ const router = express.Router();
 const controllers = require('../controllers/controllers');
 const {checkSchema} = require('express-validator');
 const {emailSendRules } = require ('../models/validations/email');
-const cors =  require('cors');
 
-router.use(cors());
 router.post('/send',checkSchema(emailSendRules),controllers.sendMail);
 
 module.exports = router;

@@ -10,7 +10,7 @@ app.use(express.urlencoded({
     extended: true
 }));
 
-app.use(cors());
+app.use(cors({origin: '*'}))
 
 const emailRoutes = require("./routes/email");
 
