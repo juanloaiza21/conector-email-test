@@ -5,7 +5,7 @@ class Response {
             path: route,
         }
         this.errors = []
-        this.result = []
+        this.result = {}
     }
   
     setterStatus(status){
@@ -17,7 +17,7 @@ class Response {
     }
   
     setterResult(data){
-        this.result.push(data);
+        this.result =(data);
     }
   
   
