@@ -3,9 +3,9 @@ info:
   title: Tecnical Micro Services Email
   version: '1.0'
 servers:
-  - url: http://localhost:3003
+  - url: http://localhost:3005
     description : Services Local 
-  - url: https://conectoremail-2sqvoxuxua-uc.a.run.app
+  - url: https://conector-email-comiagro-zo23azn7ba-uc.a.run.app
     description : Services Google Cloud
 tags:
   - name: "Email"
