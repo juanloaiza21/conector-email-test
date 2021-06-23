@@ -4,8 +4,8 @@ class Response {
             urlServices: host,
             path: route,
         }
-        this.errors = []
-        this.result = []
+        this.error 
+        this.result = {}
     }
   
     setterStatus(status){
@@ -17,16 +17,16 @@ class Response {
     }
   
     setterResult(data){
-        this.result.push(data);
+        this.result =(data);
     }
   
   
     setterError(error){
-        this.errors.push(error);
+        this.error= error;
     }
   
     getterErrors() { 
-        return this.errors
+        return this.error
     }
   
     setterLink(data){
@@ -40,12 +40,12 @@ class Response {
     answer(){
         let info =  this.info;
         let result = this.result;
-        let errors = this.errors;
+        let error = this.error;
         let object = {}
-        if (errors.length > 0) {
+        if (error) {
             object = {
                 info,
-                errors
+                error
             }
         
         }else{
