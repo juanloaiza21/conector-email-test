@@ -7,6 +7,8 @@ servers:
     description : Services Local 
   - url: https://conectoremail-2sqvoxuxua-uc.a.run.app
     description : Services Google Cloud
+  - url: https://emailconector.herokuapp.com
+    description : herokuapp
 tags:
   - name: "Email"
     description: "Email Services Apicreate"
